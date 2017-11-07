@@ -1,0 +1,22 @@
+<div class="rows">
+  {{world-info
+      infoType='Friendly NPCs'
+      name='Name'
+      list=friendly
+      on-submit=(action 'appendToList' 'friendly')
+  }}
+
+  {{world-info
+      infoType='Enemies Encountered'
+      name='Enemy Type'
+      list=enemy
+      on-submit=(action 'appendToList' 'enemy')
+  }}
+
+  {{world-info
+      infoType='Other Info'
+      name='Title'
+      list=other
+      on-submit=(action 'appendToList' 'other')
+  }}
+</div>

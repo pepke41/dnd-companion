@@ -1,0 +1,12 @@
+<h2>{{infoType}}</h2>
+{{name}}: {{input type="text" value=nameValue}}<br>
+Description: {{input type="text" value=descriptionValue}}<br>
+<button {{action 'submit'}}>
+  Submit
+</button>
+
+<ul>
+  {{#each list as |item|}}
+    <li>{{item.name}}: {{item.description}}</li>
+  {{/each}}
+</ul>
