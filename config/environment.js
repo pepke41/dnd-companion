@@ -55,7 +55,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.locationType = 'hash';
-    ENV.rootURL = '/curse-of-strahd-companion/';
+    ENV.rootURL = '/dnd-companion/';
     // here you can enable a production-specific feature
   }
 
