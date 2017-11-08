@@ -1,9 +1,8 @@
 <h2>{{infoType}}</h2>
-{{name}}: {{input type="text" value=nameValue}}<br>
-Description: {{input type="text" value=descriptionValue}}<br>
-<button {{action 'submit'}}>
-  Submit
-</button>
+{{paper-input label=name value=nameValue onChange=(action (mut nameValue))}}
+{{paper-input label="Description" value=descriptionValue onChange=(action (mut
+descriptionValue))}}<br>
+{{#paper-button raised=true primary=true onClick=(action "submit")}}Submit{{/paper-button}}
 
 <ul>
   {{#each list as |item|}}
