@@ -38,14 +38,14 @@ Make use of the many generators for code, try `ember help generate` for more det
 * `ember build` (development)
 * `ember build --environment production` (production)
 
-### Deploying
+### Firebase
 
-Specify what it takes to deploy your app.
+* Sign up for a [Firebase](https://firebase.google.com/) account
+* Update `config/environment.js` to add your firebase environment variables
 
-## Further Reading / Useful Links
+For more information checkout
+[emberfire](https://github.com/firebase/emberfire#getting-started-with-firebase)
 
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+### Projet Info
+
+* This project uses emberfire, firebase, ember data, and ember paper
