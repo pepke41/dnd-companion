@@ -2,5 +2,16 @@
 
 .rows {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+}
+
+.dialogBox {
+  width: 80%;
+  max-width:600px;
+}
+
+.modal-input {
+  width: 100%;
+  box-sizing: border-box;
 }

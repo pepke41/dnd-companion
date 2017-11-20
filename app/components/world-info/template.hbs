@@ -1,11 +1,23 @@
-<h2>{{infoType}}</h2>
-{{paper-input label=name value=nameValue onChange=(action (mut nameValue))}}
-{{paper-input label="Description" value=descriptionValue onChange=(action (mut
-descriptionValue))}}<br>
-{{#paper-button raised=true primary=true onClick=(action "submit")}}Submit{{/paper-button}}
+{{#paper-toolbar}}
+  {{#paper-toolbar-tools}}
+    <h2>{{infoType}}</h2>
+    <span class="flex"></span>
+    {{#paper-button iconButton=true click=(action new)}}
+      {{paper-icon "add-circle"}}
+    {{/paper-button}}
+  {{/paper-toolbar-tools}}
+{{/paper-toolbar}}
 
-<ul>
+{{#paper-list}}
   {{#each list as |item|}}
-    <li>{{item.name}}: {{item.description}}</li>
+    {{#paper-item class="md-3-line"}}
+      <div class="md-list-item-text">
+        <h3>{{item.name}}</h3>
+        <p>{{item.description}}</p>
+      </div>
+      {{paper-divider}}
+      {{#paper-button click=(action deleteItem item)}}Delete{{/paper-button}}
+    {{/paper-item}}
   {{/each}}
-</ul>
+{{/paper-list}}
+
