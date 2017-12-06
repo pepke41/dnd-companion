@@ -1,6 +1,8 @@
 {{#paper-toolbar}}
   {{#paper-toolbar-tools}}
     {{#if session.isAuthenticated}}
+      {{#link-to "player-handbook" class="navbar"}}Handbook{{/link-to}}
+      {{#link-to "characters" class="navbar"}}Characters{{/link-to}}
       <span class="flex"></span>
       {{#paper-button onClick=(route-action "signOut")}}Sign Out{{/paper-button}}
 

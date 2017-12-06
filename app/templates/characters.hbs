@@ -1,0 +1,46 @@
+{{#if addInfoDialog}}
+  {{#paper-dialog fullscreen=fullscreen class="dialogBox"}}
+
+     {{#paper-toolbar}}
+        {{#paper-toolbar-tools}}
+          <h2>Add a character</h2>
+          <span class="flex"></span>
+          {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
+        {{/paper-toolbar-tools}}
+      {{/paper-toolbar}}
+
+    {{#paper-dialog-content}}
+        {{paper-input class="modal-input" label="Name" value=name onChange=(action (mut
+        name))}}<br>
+        {{paper-input class="modal-input" label="Current Health"
+        value=current_health onChange=(action (mut
+        current_health))}}<br>
+        {{paper-input class="modal-input" label="Max Health" value=max_health onChange=(action (mut
+        max_health))}}<br>
+    {{/paper-dialog-content}}
+
+    {{#paper-dialog-actions class="layout-row"}}
+      <span class="flex"></span>
+        {{#paper-button raised=true primary=true click=(action
+          'addCharacter')}}Add{{/paper-button}}
+    {{/paper-dialog-actions}}
+
+  {{/paper-dialog}}
+{{/if}}
+<h1>Characters</h1>
+{{#if (eq model.length 0)}}
+  <h2>No players yet</h2>
+  <p>Click the + to add some characters</p>
+{{else}}
+  {{#paper-list}}
+    {{#each model as |item|}}
+      {{character-card character=item}}
+    {{/each}}
+  {{/paper-list}}
+{{/if}}
+
+{{#paper-button fab=true iconButton=true click=(action "openDialog")
+  class="addCharacter"}}
+  {{paper-icon "add-circle"}}
+{{/paper-button}}
+
