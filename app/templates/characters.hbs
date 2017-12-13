@@ -32,11 +32,13 @@
   <h2>No players yet</h2>
   <p>Click the + to add some characters</p>
 {{else}}
-  {{#paper-list}}
-    {{#each model as |item|}}
-      {{character-card character=item}}
-    {{/each}}
-  {{/paper-list}}
+  <div class='player-list'>
+    {{#paper-list}}
+      {{#each model as |item|}}
+        {{character-card character=item}}
+      {{/each}}
+    {{/paper-list}}
+  </div>
 {{/if}}
 
 {{#paper-button fab=true iconButton=true click=(action "openDialog")

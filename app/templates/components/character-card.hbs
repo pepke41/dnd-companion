@@ -8,14 +8,17 @@
     {{#card.content}}
       <p><b>Health</b></p>
       {{paper-input type='number' label="Current Health"
-      value=current_health onChange=(action (mut
-      current_health))}}
+      value=character.current_health onChange=(action (mut
+      character.current_health))}}
+      {{paper-input type='number' label="Max Health"
+      value=character.max_health onChange=(action (mut
+      character.max_health))}}
     {{/card.content}}
   {{#card.actions}}
     {{#paper-button onClick=(perform updateCharacter)}}
       {{if updateCharacter.isRunning 'Saving...' 'Save'}}
     {{/paper-button}}
-    {{#paper-button onClick=(action reset)}}
+    {{#paper-button onClick=(action "reset")}}
       Cancel
     {{/paper-button}}
   {{/card.actions}}
