@@ -8,6 +8,15 @@
   {{/paper-toolbar-tools}}
 {{/paper-toolbar}}
 
+{{#if itemEdited}}
+  {{add-info
+    type=infoType
+    nameValue=itemEdited.name
+    descriptionValue=itemEdited.description
+    handleSubmit=(action 'updateItem')
+    closeAction=(action 'closeDialog')
+  }}
+{{/if}}
 {{#paper-list}}
   {{#each list as |item|}}
     {{#paper-item class="md-3-line"}}
@@ -17,6 +26,7 @@
       </div>
       {{paper-divider}}
       {{#paper-button click=(action deleteItem item)}}Delete{{/paper-button}}
+      {{#paper-button click=(action 'editItem' item)}}Edit{{/paper-button}}
     {{/paper-item}}
   {{/each}}
 {{/paper-list}}

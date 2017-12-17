@@ -10,10 +10,10 @@ export default Controller.extend({
   infoType: '',
 
   actions: {
-    appendToList() {
+    appendToList(nameValue, descriptionValue) {
       var newInfo = this.store.createRecord('world-info', {
-        name: this.get("nameValue"),
-        description: this.get("descriptionValue"),
+        name: nameValue,
+        description: descriptionValue,
         type: this.get("infoType")
       });
       return newInfo.save().then(() => {

@@ -6,12 +6,17 @@ export default Ember.Route.extend({
   },
   actions: {
     signIn: function(provider) {
-      this.get('session').open('firebase', { provider: provider}).then(function(data) {
-        console.log(data.currentUser);
-      });
+      this.get('session')
+        .open('firebase', { provider: 'google'})
+        .then(() => {
+          this.transitionTo('player-handbook');
+        });
     },
     signOut: function() {
       this.get('session').close();
+    },
+    accessDenied: function() {
+      this.transitionTo('logged-out');
     }
   }
 })

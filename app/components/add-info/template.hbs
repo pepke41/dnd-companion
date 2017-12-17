@@ -1,0 +1,30 @@
+{{#paper-dialog fullscreen=fullscreen class="dialogBox"}}
+
+    {{#paper-toolbar}}
+      {{#paper-toolbar-tools}}
+      {{#if (eq type 'friendly')}}
+        <h2>Friendly Character</h2>
+        {{else if (eq type 'enemy')}}
+          <h2>Enemy Encountered</h2>
+        {{else}}
+          <h2>Other Info</h2>
+      {{/if}}
+        <span class="flex"></span>
+        {{#paper-button iconButton=true onClick=(action closeAction)}}{{paper-icon icon="close"}}{{/paper-button}}
+      {{/paper-toolbar-tools}}
+    {{/paper-toolbar}}
+
+  {{#paper-dialog-content}}
+      {{paper-input class="modal-input" label="Title" value=nameValue onChange=(action (mut
+      nameValue))}}<br>
+      {{paper-input class="modal-input" textarea=true label="Description" value=descriptionValue  passThru=(hash rows=5 maxRows=5) onChange=(action (mut
+        descriptionValue))}}<br>
+  {{/paper-dialog-content}}
+
+  {{#paper-dialog-actions class="layout-row"}}
+    <span class="flex"></span>
+      {{#paper-button raised=true primary=true click=(action handleSubmit
+        nameValue descriptionValue)}}Submit{{/paper-button}}
+  {{/paper-dialog-actions}}
+
+{{/paper-dialog}}

@@ -5,13 +5,7 @@
       {{#link-to "characters" class="navbar"}}Characters{{/link-to}}
       <span class="flex"></span>
       {{#paper-button onClick=(route-action "signOut")}}Sign Out{{/paper-button}}
-
-    {{else}}
-      <span class="flex"></span>
-      {{#paper-button onClick=(route-action "signIn" "google")}}Sign In{{/paper-button}}
     {{/if}}
   {{/paper-toolbar-tools}}
 {{/paper-toolbar}}
-{{#if session.isAuthenticated}}
-  {{outlet}}
-{{/if}}
+{{outlet}}

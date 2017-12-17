@@ -7,9 +7,10 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('player-handbook');
+  this.authenticatedRoute('player-handbook');
   this.route('players');
   this.route('characters');
+  this.route('logged-out');
 });
 
 export default Router;
