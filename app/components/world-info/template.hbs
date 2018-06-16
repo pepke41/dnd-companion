@@ -22,7 +22,7 @@
     {{#paper-item class="md-3-line"}}
       <div class="md-list-item-text">
         <h3>{{item.name}}</h3>
-        <p>{{item.description}}</p>
+        {{html-safe item.description}}
       </div>
       {{paper-divider}}
       {{#paper-button click=(action deleteItem item)}}Delete{{/paper-button}}

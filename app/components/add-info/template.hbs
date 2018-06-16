@@ -17,8 +17,17 @@
   {{#paper-dialog-content}}
       {{paper-input class="modal-input" label="Title" value=nameValue onChange=(action (mut
       nameValue))}}<br>
-      {{paper-input class="modal-input" textarea=true label="Description" value=descriptionValue  passThru=(hash rows=5 maxRows=5) onChange=(action (mut
-        descriptionValue))}}<br>
+       {{trix-editor class="trix-editor-wrapper"
+                editorClass="trix-editor"
+                value=descriptionValue
+                trix-attachment-add=(action "handleTrixAction")
+                trix-attachment-remove=(action "handleTrixAction")
+                trix-blur=(action "handleTrixAction")
+                trix-change=(action "handleTrixAction")
+                trix-file-accept=(action "handleTrixAction")
+                trix-focus=(action "handleTrixAction")
+                trix-initialize=(action "handleTrixAction")
+                trix-selection-change=(action "handleTrixAction")}}
   {{/paper-dialog-content}}
 
   {{#paper-dialog-actions class="layout-row"}}
