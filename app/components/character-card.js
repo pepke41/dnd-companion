@@ -1,13 +1,13 @@
-import Component from '@ember/component';
-import { task } from 'ember-concurrency';
+import Component from "@ember/component";
+import { task } from "ember-concurrency";
 
 export default Component.extend({
   character: undefined,
   editMode: false,
 
-  updateCharacter: task(function *() {
-    yield this.get('character').save();
-    this.set('editMode', false);
+  updateCharacter: task(function*() {
+    yield this.get("character").save();
+    this.set("editMode", false);
   }),
 
   actions: {
@@ -15,8 +15,8 @@ export default Component.extend({
       this.set("editMode", true);
     },
     reset() {
-      this.get('character').rollbackAttributes();
-      this.set('editMode', false);
+      this.get("character").rollbackAttributes();
+      this.set("editMode", false);
     }
   }
 });

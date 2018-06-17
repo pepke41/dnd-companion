@@ -1,17 +1,16 @@
-import Controller from '@ember/controller';
-import { computed } from '@ember/object';
+import Controller from "@ember/controller";
+import { computed } from "@ember/object";
 
 export default Controller.extend({
-
-  friendly: computed.filterBy('model', 'type', 'friendly'),
-  enemy: computed.filterBy('model', 'type', 'enemy'),
-  other: computed.filterBy('model', 'type', 'other'),
+  friendly: computed.filterBy("model", "type", "friendly"),
+  enemy: computed.filterBy("model", "type", "enemy"),
+  other: computed.filterBy("model", "type", "other"),
   addInfoDialog: false,
-  infoType: '',
+  infoType: "",
 
   actions: {
     appendToList(nameValue, descriptionValue) {
-      var newInfo = this.store.createRecord('world-info', {
+      var newInfo = this.store.createRecord("world-info", {
         name: nameValue,
         description: descriptionValue,
         type: this.get("infoType")
