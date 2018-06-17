@@ -1,7 +1,8 @@
 # curse-of-strahd-companion
 
+This project is an online extension of the player's handbook used in Dungeons and Dragons. Currently this project keeps track of player notes (friends, foes, and general info) and character information. The project uses firebase, with ember-fire, for authentication and database storage. The UI is designed with ember paper, and ember trix editor for input.
+
 This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
 
 ## Prerequisites
 
@@ -45,7 +46,3 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 For more information checkout
 [emberfire](https://github.com/firebase/emberfire#getting-started-with-firebase)
-
-### Projet Info
-
-* This project uses emberfire, firebase, ember data, and ember paper
