@@ -13,7 +13,11 @@ export default Ember.Route.extend({
         });
     },
     signOut: function() {
-      this.get('session').close();
+      this.get('session')
+      .close()
+      .then(() => {
+        this.transitionTo('logged-out');
+      });
     },
     accessDenied: function() {
       this.transitionTo('logged-out');
