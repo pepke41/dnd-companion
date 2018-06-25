@@ -25,9 +25,9 @@ module.exports = function(environment) {
 
     firebase: {
       apiKey: process.env["FIREBASE_API_KEY"],
-      authDomain: process.env["FIREBASE_AUTH_DOMAIN"],
-      databaseURL: process.env["FIREBASE_DATABASE_URL"],
-      storageBucket: process.env["FIREBASE_STORAGE_BUCKET"]
+      authDomain: `${process.env["FIREBASE_PROJECT_ID"]}.firebaseapp.com`,
+      databaseURL: `https://${process.env["FIREBASE_PROJECT_ID"]}.firebaseio.com`,
+      storageBucket: `${process.env["FIREBASE_PROJECT_ID"]}.appspot.com`
     },
     torii: {
       sessionServiceName: "session"

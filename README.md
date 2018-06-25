@@ -18,10 +18,29 @@ You will need the following things properly installed on your computer.
 * `git clone <repository-url>` this repository
 * `cd curse-of-strahd-companion`
 * `npm install`
+* Setting up Firebase
+  * Sign up for a [Firebase](https://firebase.google.com/) account
+  * Create a new Firebase app from the [Firebase Console](https://console.firebase.google.com)
+  * Enable Authentication
+    * Under the Develop Section select _Authentication_
+    * Click on the _Sign-in Method_
+    * Click on the edit icon on the Google section
+    * Enable Google Authentication
+  * Enable Storage
+    * Under the Develop Section select _Database_
+    * Choose the _Realtime Database_ option and click _Get Started_
+    * Select _Start in test mode_ and click enable
+  * Set up local authentication
+    * Find the gear in the top left next to _Project Overview_
+    * Grab the _Project ID_ and _Web API Key_ you'll need those for your Firebase environment variables
+
 
 ## Running / Development
 
-* `ember serve`
+```
+FIREBASE_API_KEY="your_firebase_api_key" FIREBASE_PROJECT_ID="your_firebase_project_id" npm run start
+```
+
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 * Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 
@@ -39,10 +58,3 @@ Make use of the many generators for code, try `ember help generate` for more det
 * `ember build` (development)
 * `ember build --environment production` (production)
 
-### Firebase
-
-* Sign up for a [Firebase](https://firebase.google.com/) account
-* Update `config/environment.js` to add your firebase environment variables
-
-For more information checkout
-[emberfire](https://github.com/firebase/emberfire#getting-started-with-firebase)
